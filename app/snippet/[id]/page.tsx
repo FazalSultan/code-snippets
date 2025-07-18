@@ -3,12 +3,9 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import {handleDeleteAction} from '@/action/index'
 
-export default async function DetailsPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const id = parseInt(params.id);
+export default async function DetailsPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id: idString } = await params;
+  const id = parseInt(idString);
 
   const searchById = await prisma.snippet.findUnique({
     where: {

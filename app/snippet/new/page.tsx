@@ -10,7 +10,7 @@ async function createSnippet(formData: FormData) {
   const title = formData.get("title") as string;
   const code = formData.get("codedescription") as string;
 
-  const snippetCode = await prisma.snippet.create({
+   await prisma.snippet.create({
     data: {
       title,
       code,
