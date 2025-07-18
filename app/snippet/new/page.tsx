@@ -10,7 +10,7 @@ async function createSnippet(formData: FormData) {
   const title = formData.get("title") as string;
   const code = formData.get("codedescription") as string;
 
-  const snippetCode = await prisma.Snippet.create({
+  const snippetCode = await prisma.snippet.create({
     data: {
       title,
       code,
@@ -26,9 +26,9 @@ export default function NewSnippet() {
       <h3 className="font-bold text-3xl py-10">Think Twice, Code once ✨😎</h3>
       <form action={createSnippet}>
         <Label className="font-medium">Title</Label>
-        <Input type="text" name="title" id="title" />
+        <Input type="text" name="title" id="title" required/>
         <Label className="font-medium mt-7">Code: </Label>
-        <Textarea name="codedescription" id="codedescription" />
+        <Textarea name="codedescription" id="codedescription" required/>
         <Button type="submit" className="mt-4">New</Button>
       </form>
     </div>

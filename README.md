@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 CodeSnippet - VS Code Editor in Your Browser
 
-## Getting Started
+CodeSnippet is a full-stack code editor app built with **Next.js**, **Prisma**, **SQLite** and **Shadcn** that allows users to **write**, **view**, **edit**, and **delete** code snippets right from their browser using a real VS Code-like experience, powered by **React Monaco Editor**.
 
-First, run the development server:
+This project also demonstrates usage of **dynamic routing** and **nested routing** in Next.js for managing individual snippet pages and editing routes.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 📝 Create and save custom code snippets with a title
+- 💻 Edit code in-browser using Monaco Editor (the same editor as VS Code)
+- 📄 View each code snippet in detail
+- 🔧 Update/edit your existing code snippets
+- ❌ Delete unwanted code snippets
+- 🔀 Dynamic and nested routing with Next.js
+- 📦 SQLite database with Prisma ORM integration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧑‍💻 Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+| Tech          | Description                                  |
+|---------------|----------------------------------------------|
+| **Next.js**   | React Framework for SSR and Routing          |
+| **TypeScript**| Type-safe development                        |
+| **Prisma**    | ORM for database queries                     |
+| **SQLite**    | Lightweight relational database              |
+| **React Monaco Editor** | VS Code-like editor in browser     |
+| **Tailwind CSS** *(optional)* | Utility-first styling        |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Folder Structure Overview
 
-## Deploy on Vercel
+codesnippet/
+- ├── app/
+- │ ├── snippet/
+- │ │ ├── [id]/ # Dynamic route to view a snippet
+- │ │ │ ├── page.tsx # Snippet detail page
+- │ │ │ └── edit/ # Nested route to edit snippet
+- │ │ │ └── page.tsx
+- │ │ └── new/ # Create new snippet page
+- │ │ └── page.tsx
+- ├── components/
+- │ └── ui/
+- │ └── CreateEditorForm.tsx
+- ├── lib/
+- │ └── prisma.ts # Prisma Client
+- ├── prisma/
+- │ └── schema.prisma # SQLite DB schema
+- ├── public/
+- ├── styles/
+- ├── .env
+- ├── README.md
+- ├── package.json
+- └── tsconfig.json
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+
+## ⚙️ Setup Instructions
+
+### 1. 📥 Clone the Repository
+- git clone https://github.com/FazalSultan/code-snippets.git
+- cd codesnippet
+- npm install
+
+### Install Dependency
+
+## 🧪 Setup Prisma & SQLite
+ - Create the .env file:
+ - DATABASE_URL="file:./dev.db"
+ - npx prisma migrate dev --name init
+ - npx prisma generate
+
+
+## Monaco Editor
+ - npm install @monaco-editor/react
+
+ ## Start the Dev Server
+ - npm run dev
