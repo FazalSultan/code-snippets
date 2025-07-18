@@ -11,7 +11,7 @@ export default async function Home() {
   const snippet = await prisma.snippet.findMany();
   return (
     <>
-      <div className="MainContainer p-8 h-[683px]">
+      <div className="MainContainer p-8 ">
         <div className="container flex justify-between mx-auto">
           <h3 className="font-bold text-3xl">  Snippets</h3>
           <Link href="./snippet/new">
